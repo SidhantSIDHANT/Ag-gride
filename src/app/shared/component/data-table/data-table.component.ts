@@ -120,7 +120,8 @@ export class DataTableComponent implements OnInit {
   }
 
   toggleColumn(event: any) {
-    const value = event.target.value;
+    const value = event.value;
+    console.log(value)
     switch (value.toLowerCase()) {
       case 'type':
         this.showType = !this.showType;

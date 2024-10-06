@@ -8,6 +8,8 @@ import { AgGridModule } from 'ag-grid-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormComponent } from './shared/component/form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [AppComponent, DataTableComponent, FormComponent],
@@ -17,6 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
+    MatSelectModule,
+    MatInputModule
   ],
   providers: [RuleService],
   bootstrap: [AppComponent],

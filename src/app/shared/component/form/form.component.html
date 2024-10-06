@@ -1,71 +1,104 @@
 <h1 class="bg-info p-4 text-center text-white text-uppercase">Forms Details</h1>
 <div class="d-flex justify-content-center mb-4">
-    <form [formGroup]="ruleForm" class="w-50" (ngSubmit)="addNewrowData()">
-        <div class="form-group">
-            <label for="ruleName"><b>Rule Name <span class="text-danger">*</span></b></label>
-            <input type="text" class="form-control" placeholder="Rule Name" formControlName="ruleName" />
-        </div>
-        <div class="form-group">
-            <label for="ruleName"><b>Favourite <span class="text-danger">*</span></b></label>
-            <select class="form-control" formControlName="isActive">
-                <option>Y</option>
-                <option>N</option>
-            </select>
-        </div>
+  <form [formGroup]="ruleForm" class="w-50" (ngSubmit)="addNewrowData()">
+    <mat-form-field class="example-full-width w-100" appearance="fill">
+      <mat-label
+        ><b>Rule Name <span class="text-danger">*</span></b></mat-label
+      >
+      <input matInput placeholder="Rule Name" formControlName="ruleName" />
+    </mat-form-field>
 
-        <div class="form-group">
-            <label for="ruleName"><b>Type <span class="text-danger">*</span></b></label>
-            <input type="text" class="form-control" placeholder="Type" formControlName="ruleType" />
-        </div>
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label
+        ><b>isActive <span class="text-danger">*</span></b></mat-label
+      >
+      <mat-select formControlName="isActive">
+        <mat-option [value]="'Y'"> Y </mat-option>
+        <mat-option [value]="'N'"> N </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-        <div class="form-group">
-            <label for="ruleName"><b>Subtype <span class="text-danger">*</span></b></label>
-            <input type="text" class="form-control" placeholder="SubType" formControlName="subType" />
-        </div>
+    <mat-form-field class="example-full-width w-100" appearance="fill">
+      <mat-label
+        ><b>Rule Type <span class="text-danger">*</span></b></mat-label
+      >
+      <input matInput placeholder="Rule Type" formControlName="ruleType" />
+    </mat-form-field>
 
-        <div class="form-group">
-            <label for="ruleName"><b>Domain <span class="text-danger">*</span></b></label>
-            <input type="text" class="form-control" placeholder="Domain" formControlName="domain" />
-        </div>
+    <mat-form-field class="example-full-width w-100" appearance="fill">
+      <mat-label
+        ><b>Subtype <span class="text-danger">*</span></b></mat-label
+      >
+      <input matInput placeholder="SubType" formControlName="subType" />
+    </mat-form-field>
 
-        <div class="form-group">
-            <label for="ruleName"><b>Impacted <span class="text-danger">*</span></b></label>
-            <input type="text" class="form-control" placeholder="Impacted" formControlName="impacted" />
-        </div>
+    <mat-form-field class="example-full-width w-100" appearance="fill">
+      <mat-label
+        ><b>Domain <span class="text-danger">*</span></b></mat-label
+      >
+      <input matInput placeholder="Domain" formControlName="domain" />
+    </mat-form-field>
 
-        <div class="form-group">
-            <label for="ruleName"><b>Favourite <span class="text-danger">*</span></b></label>
-            <select class="form-control" formControlName="isFavourite">
-                <option>Y</option>
-                <option>N</option>
-            </select>
-        </div>
+    <mat-form-field class="example-full-width w-100" appearance="fill">
+      <mat-label
+        ><b>Impacted <span class="text-danger">*</span></b></mat-label
+      >
+      <input matInput placeholder="Impacted" formControlName="impacted" />
+    </mat-form-field>
 
-        <div class="form-group">
-            <label for="ruleName"><b>Scheduled <span class="text-danger">*</span></b></label>
-            <select class="form-control" formControlName="isScheduled">
-                <option>Y</option>
-                <option>N</option>
-            </select>
-        </div>
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label
+        ><b>Favourite <span class="text-danger">*</span></b></mat-label
+      >
+      <mat-select formControlName="isFavourite">
+        <mat-option [value]="'Y'"> Y </mat-option>
+        <mat-option [value]="'N'"> N </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-        <div class="form-group">
-            <label for="ruleName"><b>lastScheduledDate <span class="text-danger">*</span></b></label>
-            <input type="text" class="form-control" placeholder="lastScheduledDate"
-                formControlName="lastScheduledDate" />
-        </div> 
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label
+        ><b>Scheduled <span class="text-danger">*</span></b></mat-label
+      >
+      <mat-select formControlName="isScheduled">
+        <mat-option [value]="'Y'"> Y </mat-option>
+        <mat-option [value]="'N'"> N </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-        <div class="form-group">
-            <label for="ruleName"><b>Alert <span class="text-danger">*</span></b></label>
-            <select class="form-control" formControlName="alertStatus">
-                <option>Y</option>
-                <option>N</option>
-            </select>
-        </div>
+    <!-- use npm time picker or ngx bootstrap time picker -->
+    <mat-form-field class="example-full-width w-100" appearance="fill">
+      <mat-label
+        ><b
+          >Last Scheduled Date <span class="text-danger">*</span></b
+        ></mat-label
+      >
+      <input
+        matInput
+        placeholder="Last Scheduled Date"
+        formControlName="lastScheduledDate"
+      />
+    </mat-form-field>
 
-        <div class="text-right">
-            <button class="btn btn-primary" type="submit">Save</button>
-            <button class="btn btn-info mx-2" type="button" (click)="onRuleUpdated(selectedRowData.id)" >update</button>
-        </div>
-    </form>
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label
+        ><b>Alert <span class="text-danger">*</span></b></mat-label
+      >
+      <mat-select formControlName="alertStatus">
+        <mat-option [value]="'Y'"> Y </mat-option>
+        <mat-option [value]="'N'"> N </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="text-right">
+      <button class="btn btn-primary" type="submit">Save</button>
+      <button
+        class="btn btn-info mx-2"
+        type="button"
+        (click)="onRuleUpdated(selectedRowData.id)"
+      >
+        update
+      </button>
+    </div>
+  </form>
 </div>

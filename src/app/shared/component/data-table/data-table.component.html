@@ -4,15 +4,14 @@
 
     <h1 class="bg-info p-4 text-center mb-0 text-white text-uppercase">Table</h1>
     <div class="form-group my-3">
-        <label for="columnSelect" class="text-uppercase">
-            <b>Select a column to toggle <span class="text-danger">*</span></b>
-        </label>
-        <select id="columnSelect" (change)="toggleColumn($event)" class="form-control">
-            <!-- <option value="" selected disabled>Select a column</option> -->
-            <option *ngFor="let col of colDefs" [value]="col.field">
-                {{ col.field | uppercase }}
-            </option>
-        </select>
+        <mat-form-field appearance="fill" class="w-100">
+            <label for="columnSelect" class="text-uppercase">
+                <b>Select a column to toggle <span class="text-danger">*</span></b>
+            </label>
+            <mat-select  (selectionChange)="toggleColumn($event)">
+              <mat-option *ngFor="let col of colDefs" [value]="col.field">{{col.field}}</mat-option>
+            </mat-select>
+          </mat-form-field>
     </div>
 
     <ag-grid-angular style="width: auto; height: 600px;" [class]="themeClass" [rowData]="rowData" [columnDefs]="colDefs"
