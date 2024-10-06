@@ -37,7 +37,6 @@ export class FormComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.initializeRuleForm();
     this.uuid = Math.floor(Math.random() * 100000);
-   
   }
 
   initializeRuleForm() {
@@ -48,10 +47,10 @@ export class FormComponent implements OnInit, OnChanges {
       subType: new FormControl(''),
       domain: new FormControl(''),
       impacted: new FormControl(''),
-      isFavourite: new FormControl(''), // More descriptive
-      isScheduled: new FormControl(''), // More descriptive
+      isFavourite: new FormControl(''), 
+      isScheduled: new FormControl(''), 
       lastScheduledDate: new FormControl(''),
-      alertStatus: new FormControl(''), // More descriptive
+      alertStatus: new FormControl(''), 
     });
   }
 
@@ -80,8 +79,6 @@ export class FormComponent implements OnInit, OnChanges {
 
   addNewrowData() {
     this.newRowData = {...this.ruleForm.value, id : this.uuid};
-    console.log(this.newRowData);
-    console.log(this.uuid)
     if (this.ruleForm.valid) {
       this.emitNewRowData.emit(this.newRowData);
     }

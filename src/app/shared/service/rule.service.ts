@@ -67,7 +67,6 @@ export class RuleService {
 
   getSingleRowData(id : number) : any{
     const singleRowData = this.rowData.find(element => element.id == id);
-    console.log(singleRowData)
     return singleRowData;
   }
 }
