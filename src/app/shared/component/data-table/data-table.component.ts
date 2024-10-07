@@ -27,6 +27,19 @@ export class DataTableComponent implements OnInit {
   showLastScheduledDate = true;
   showButton = true;
 
+  gridOptions = {
+    onGridReady: (params: any) => {
+      this.gridApi = params.api;
+      this.gridColumnApi = params.columnApi;
+      params.api.sizeColumnsToFit();
+
+      this.selectFirstRow();
+    },
+    onSelectionChanged: () => {
+      this.onSelectionChanged();
+    },
+  };
+
   constructor(private ruleService: RuleService) {}
 
   ngOnInit(): void {
@@ -153,19 +166,6 @@ export class DataTableComponent implements OnInit {
     }
     this.updateColumnDefs();
   }
-
-  gridOptions = {
-    onGridReady: (params: any) => {
-      this.gridApi = params.api;
-      this.gridColumnApi = params.columnApi;
-      params.api.sizeColumnsToFit();
-
-      this.selectFirstRow();
-    },
-    onSelectionChanged: () => {
-      this.onSelectionChanged();
-    },
-  };
 
   private selectFirstRow(): void {
     const firstNode = this.gridApi.getDisplayedRowAtIndex(0);
