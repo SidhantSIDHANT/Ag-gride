@@ -180,10 +180,12 @@ export class DataTableComponent implements OnInit {
       element.id === rowData.id ? { ...element, ...rowData } : element
     );
     this.gridApi.setRowData(updatedRowData);
+    console.log("Update the data :- "+ JSON.stringify(rowData ));
   }
 
   addNewRow(rowData: Rule) {
     this.rowData.push(rowData);
     this.gridApi.setRowData(this.rowData);
+    console.log("New data is inserted :- "+ JSON.stringify(rowData) );
   }
 }
